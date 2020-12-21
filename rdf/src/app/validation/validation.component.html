@@ -1,0 +1,173 @@
+<!-- reactive forms -->
+<div class="justify-content-center register-head">
+
+    <div class="container-fluid parent">
+
+        <div class="card text-center justify-content-center">
+            <div class="card-header">
+            registration page
+            </div>
+            <div class="card-body cardbody">
+            <form>
+             <div class="col-md-12 row">
+                <div class="form-group col-md-6">
+                    <label>
+                        Name
+                    </label>
+                    <input [formControl]="registerForm.controls['name']" id="name" type="text" class="form-control" required>
+                    <div *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched">
+                        <small class="text-danger" *ngIf="registerForm.controls['name'].errors?.required">name is required
+                        </small>
+                        <small class="text-danger" *ngIf="registerForm.controls['name'].errors?.minlength">minimunm 6 letters
+                            required
+                        </small>
+                        <small class="text-danger" *ngIf="registerForm.controls['name'].errors?.maxlength">max 12 letters is
+                            required
+                        </small>
+                    </div>
+                </div>
+        
+               <div class="form-group col-md-6">
+                    <label>
+                        Lastname
+                    </label>
+                    <input id="lastname" [formControl]="registerForm.controls['lastName']" type="text" class="form-control">
+                    <div *ngIf="registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched">
+                        <small class="text-danger" *ngIf="registerForm.controls['lastName'].errors?.required">last name is
+                            required
+                        </small>
+                        <small class="text-danger" *ngIf="registerForm.controls['lastName'].errors?.minlength">minimunm 6
+                            letters
+                            required </small>
+                        <small class="text-danger" *ngIf="registerForm.controls['lastName'].errors?.maxlength">max 12 letters is
+                            required </small>
+                    </div>
+                </div>
+        
+             </div>
+               <div class="form-group col-md-12">
+                    <label>
+                        Email
+                    </label>
+                    <input id="email" [formControl]="registerForm.controls['email']" type="text" class="form-control">
+                    <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">
+                        <small class="text-danger" *ngIf="registerForm.controls['email'].errors?.required"> email is required
+                        </small>
+                        <small *ngIf="registerForm.controls['email'].hasError('invalidEmail')" class="text-danger">the email
+                            mustone
+                            more letters including @ symbol and then followed by letter</small>
+                    </div>
+                </div>
+        
+                <div class="col-md-12 row ">
+                    <div class="form-group col-md-6">
+                        <label>
+                            passsword
+                        </label>
+                        <input id="password" [formControl]="registerForm.controls['password']" type="password" class="form-control">
+                    </div>
+            
+                    <div class="form-group col-md-6">
+                        <label>
+                            confirm password
+                        </label>
+                        <input id="cmpwd" [formControl]="registerForm.controls['confirmPassword']" type="password"
+                            class="form-control">
+                        <small class="text-danger" *ngIf="registerForm.errors?.misMatch">password donot match</small>
+                     </div> 
+                </div>
+               <div class="col-md-12 row">
+                   <div class="col-md-6"><button class="btn btn-primary" (click)="goBacktoLogin()">back</button> </div>
+                   <div class="col-md-6"><button class="btn btn-primary subbtn"   (click)="onSubmit()"type="submit">register</button></div>
+               </div>
+         
+            </form>
+        </div>
+        </div>
+        </div>
+ 
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- the below is wrong way of calling mismatch -->
+            <!-- <small *ngIf="registerForm.controls['confirmPassword'].hasError('misMatch')">password and
+                confirmpassword dont match</small>  -->
+
+              <!-- <input [class.is-invalid]="registrationForm.errors?.mismatch" [formControl]="registerForm.controls['confirmPassword']" type="password" class="form-control"> -->
+       <!-- [disabled]="registerForm.controls['name'].invalid && registerForm.controls['lastName'].invalid && registerForm.controls['confirmPassword'].invalid" -->
+        <!-- <button class="btn btn-primary" (click)="onUsersData()"> loadapi</button> -->
+        <!-- <button (click)="goBacktoLogin()"s>Back</button> -->
+
+<!-- <div class="jumbotron">
+    <table class="table table-borderless table-dark">
+        <thead>
+          <tr>
+         
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">confirmPassword</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of userdata;index as i">
+            
+            <td> {{data.name}}</td>
+            <td> {{data.lastName}}</td>
+            <td> {{data.email}}</td>
+           
+          </tr>
+        
+        </tbody>
+      </table>
+      
+</div> -->
+
+
+
+
+
+ <!-- <td> {{registerForm.controls['lastName'].value|json}}</td>
+            <td> {{registerForm.controls['email'].value|json}}</td> -->
+            <!-- <td> {{registerForm.controls['passsword'].value|json}}</td>
+            <td> {{registerForm.controls['confirmPassword'].value|json}}</td> -->

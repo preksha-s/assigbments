@@ -1,0 +1,25 @@
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>name</th>
+        <th>gender</th>
+        <th>annual</th>
+        <th>salary</th>
+        <th>DoB</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngfor="let employee of employees">
+            <td>{{employee.Code}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.annualsalary}}</td>
+            <td>{{employee.dateOfBirth}}</td>
+            <td>{{employee.dateOfBirth|age}}</td>
+   
+      </tr>
+    </tbody>
+  </table>

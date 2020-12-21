@@ -1,0 +1,13 @@
+<p>child-a works!</p>
+<div class="container">
+ <div class="card">
+    <div class="card-header">
+    <h4>parent component</h4>
+    </div>
+    <div class="card-body">
+        Pass data:<input type="text" class="form-control"  [(ngModel)]="enterName" />
+        <input  type="button" value="send" (click)="TransfrData()" class="btn-btn-primary">
+    </div>
+ </div>
+</div>
+<app-child-b [parentData]="parentData"></app-child-b>

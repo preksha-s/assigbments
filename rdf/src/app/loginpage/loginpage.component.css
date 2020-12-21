@@ -1,0 +1,34 @@
+
+.parent{
+    display: flex;
+    max-inline-size: max-content;
+    
+}
+.card{
+    margin:40px;
+    max-width: 30vw;
+    position: relative;
+    justify-items: center;
+    
+}
+.label-left{
+    float:left;
+}
+.card-header{
+    background-color: darkturquoise;
+    color: papayawhip;
+}
+.loginbtn{
+  
+  height: inherit;
+  background-color:darkturquoise; ;
+}
+.link{
+    text-decoration: underline;
+    color:blue;
+}
+.active{
+        font-weight: bold;
+        font-size:1.5em;
+        color:#23d160;
+}

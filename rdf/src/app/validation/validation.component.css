@@ -1,0 +1,22 @@
+
+.parent{
+    display: flex;
+    max-inline-size: max-content;
+    
+}
+.card{
+    margin:40px;
+    max-width: 50vw;
+    position: relative;
+    justify-items: center;
+    
+}
+label{
+    float:left;
+}
+
+
+.card-header{
+    background-color:grey;
+    color:white
+}

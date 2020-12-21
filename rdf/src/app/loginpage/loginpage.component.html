@@ -1,0 +1,91 @@
+<div ng-app="myApp" ng-controller="myController" class="container parent">
+ 
+    <div class="card text-center justify-content-center">
+        <div class="card-header">
+            Login
+        </div>
+        <div class="card-body cardbody">
+            <form name="myForm">
+                <div class="login-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="label-left">Email</label>
+                            <input type="text" [formControl]="loginForm.controls['email']" class="form-control">
+                            <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+                                <small class="text-danger"
+                                    *ngIf="loginForm.controls['email'].errors?.required">email is required</small>
+                                <small class="text-danger"
+                                    *ngIf="loginForm.controls['email'].errors?.minlength">email length must be
+                                    minimum 5</small>
+
+                                <small *ngIf="loginForm.controls['email'].hasError('invalidEmail')"
+                                    class="text-danger">the email
+                                    mustone
+                                    more letters including @ symbol and then followed by letter</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="label-left">Password</label>
+                            <input type="password" [formControl]="loginForm.controls['password']"
+                                class="form-control">
+                            <div
+                                *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+                                <small class="text-danger"
+                                    *ngIf="loginForm.controls['password'].errors?.required">passwsord is
+                                    required</small>
+                                <small class="text-danger"
+                                    *ngIf="loginForm.controls['password'].errors?.maxlength">passwsord maxlength 6
+                                    lettersrequired</small>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <small *ngIf="!user">"user not found"</small>
+                        </div>
+                    </div>
+                    <div class="row col-md-12">
+                        <div class="col-md-6">
+                    <a (click)="onClickRegister()" >click here to register</a>
+                        </div>
+                        <div class="col-md-6">
+                          
+                        <button (click)="authenticate()" class="btn btn-success loginbtn" >login</button>
+                    </div>
+                    </div>
+                 </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<router-outlet></router-outlet>
+
+
+    <!-- <h2 *ngFor="let u of user">{{data.email}}</h2>
+                             <div class="hello">
+              
+                  <table class="table table-borderless table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let arry of arrayData">
+                        <td> {{u.email}}</td>
+                        <td> {{u.password}}</td>
+                     </tr>
+                     </tbody>
+                  </table>
+              </div> -->
